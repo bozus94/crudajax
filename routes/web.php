@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('contacts', 'ContactController@getIndex');
+Route::post('contacts', 'ContatController@postStore');
+Route::get('contacts/data', 'ContactController@getData');
+Route::post('contacts/update', 'ContactController@postUpdate');
+Route::post('contacts/delete', 'ContactController@postDelete');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
